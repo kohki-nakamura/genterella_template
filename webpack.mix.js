@@ -96,11 +96,28 @@ mix.styles([
  */
 
 mix.babel([
-    'node_modules/jquery/dist/jquery.js',
-    'node_modules/bootstrap/dist/js/bootstrap.js',
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
     'node_modules/bootstrap-progressbar/bootstrap-progressbar.js',
     'node_modules/pace-progress/pace.js',
+    'node_modules/fastclick/lib/fastclick.js',
+    'node_modules/nprogress/nprogress.js',
     'node_modules/icheck/icheck.js',
+    'node_modules/datatables/media/js/jquery.dataTables.min.js',
+    'node_modules/datatables.net-bs/js/dataTables.bootstrap.min.js',
+    'node_modules/datatables.net-buttons/js/dataTables.buttons.min.js',
+    'node_modules/datatables.net-buttons-bs/js/buttons.bootstrap.min.js',
+    'node_modules/datatables.net-buttons/js/buttons.flash.min.js',
+    'node_modules/datatables.net-buttons/js/buttons.html5.min.js',
+    'node_modules/datatables.net-buttons/js/buttons.print.min.js',
+    'node_modules/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js',
+    'node_modules/datatables.net-keytable/js/dataTables.keyTable.min.js',
+    'node_modules/datatables.net-responsive/js/dataTables.responsive.min.js',
+    'node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js',
+    'node_modules/datatables.net-scroller/js/dataTables.scroller.min.js',
+    'node_modules/jszip/dist/jszip.min.js',
+    'node_modules/pdfmake/build/pdfmake.min.js',
+    'node_modules/pdfmake/build/vfs_fonts.js',
     'resources/js/admin/globals.js',
     'node_modules/gentelella/build/js/custom.js'
 ], 'public/js/admin/app.js').version();
@@ -112,7 +129,15 @@ mix.styles([
     'node_modules/gentelella/vendors/animate.css/animate.css',
     'node_modules/gentelella/build/css/custom.css',
     'node_modules/font-awesome/css/font-awesome.css',
+    'node_modules/nprogress/nprogress.css',
+    'node_modules/icheck/skins/flat/green.css',
     'node_modules/pace-progress/themes/blue/pace-theme-minimal.css',
+    'node_modules/datatables/media/css/jquery.dataTables.min.css',
+    'node_modules/datatables.net-bs/css/dataTables.bootstrap.min.css',
+    'node_modules/datatables.net-buttons-bs/css/buttons.bootstrap.min.css',
+    'node_modules/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css',
+    'node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.min.css',
+    'node_modules/datatables.net-scroller-bs/css/scroller.bootstrap.min.css',
     'resources/css/app.css',
 ], 'public/css/admin/app.css').version();
 
