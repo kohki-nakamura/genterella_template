@@ -28,7 +28,31 @@
             <div class="main_container">
                 @include('admin.layouts.sidebar')
                 @include('admin.layouts.navbar')
-                @yield('content')
+                
+                <div class="right_col" role="main">
+                    <div class="page-title">
+                        <div class="title_left">
+                            @yield('breadcrumbs')
+                        </div>
+                        <div class="title_right">
+                            @yield('action')
+                        </div>
+                    </div>
+                @if(session()->has('message'))
+                    @php
+                        $alertStyle = "alert-info";
+                        if (session()->has('status') && session('status') === false) {
+                            $alertStyle = "alert-danger";
+                        }
+                    @endphp
+                    <div style="clear: both"></div>
+                    <div class="alert {{$alertStyle}} mb-3">
+                        {{session('message')}}
+                    </div>
+                @endif
+                    @yield('content')
+                </div>
+
                 @include('admin.layouts.footer')
             </div>
         </div>
