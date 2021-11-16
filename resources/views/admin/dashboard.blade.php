@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
 
+@section('body_class','nav-md')
+
 @section('content')
     <div class="right_col" role="main">
         <!-- top tiles -->
@@ -680,4 +682,14 @@
         </div>
         </div>
     </div>
+@endsection
+
+@section('styles')
+    @parent
+    <link href="{{ asset('css/admin/dashboard.css') }}" rel="stylesheet">
+@endsection
+
+@section('scripts')
+    @parent
+    <script src="{{ asset('js/admin/dashboard.js') }}" defer></script>
 @endsection

@@ -1,21 +1,21 @@
 let mix = require('laravel-mix');
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+// const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 // paths to clean
-var pathsToClean = [
-    'public/js',
-    'public/css',
-    'public/js/admin',
-    'public/css/admin',
-    'public/js/jquery-ui',
-    'public/css/auth',
-    'public/ckeditor/plugins/citetag',
-    'public/ckeditor/plugins/inserthtml',
-    'public/ckeditor/plugins/adlink',
-];
+// var pathsToClean = [
+//     'public/js',
+//     'public/css',
+//     'public/js/admin',
+//     'public/css/admin',
+//     'public/js/jquery-ui',
+//     'public/css/auth',
+//     'public/ckeditor/plugins/citetag',
+//     'public/ckeditor/plugins/inserthtml',
+//     'public/ckeditor/plugins/adlink',
+// ];
 
 // the clean options to use
-var cleanOptions = {};
+// var cleanOptions = {};
 
 // mix.webpackConfig({
 //     plugins: [
@@ -44,7 +44,6 @@ var cleanOptions = {};
 mix.babel([
     'node_modules/jquery/dist/jquery.js',
     'node_modules/pace-progress/pace.js',
-    'resources/js/admin/globals.js'
 ], 'public/js/app.js').version();
 
 mix.styles([
@@ -56,18 +55,6 @@ mix.styles([
 mix.copy([
     'node_modules/font-awesome/fonts/',
 ], 'public/css/fonts');
-
-mix.babel([
-    'node_modules/jquery-ui-dist/jquery-ui.js',
-    'node_modules/jquery-ui/ui/i18n/datepicker-ja.js',
-], 'public/js/jquery-ui/jquery-ui.js').version();
-
-mix.styles([
-    'node_modules/jquery-ui-dist/jquery-ui.css',
-], 'public/js/jquery-ui/jquery-ui.css').version();
-
-mix.copyDirectory('node_modules/jquery-ui-dist/images',
-    'public/js/jquery-ui/images');
 
 /*
  |--------------------------------------------------------------------------
@@ -97,9 +84,54 @@ mix.styles([
 
 mix.babel([
     'node_modules/jquery/dist/jquery.min.js',
-    'node_modules/bootstrap/dist/js/bootstrap.min.js',
-    'node_modules/bootstrap-progressbar/bootstrap-progressbar.js',
-    'node_modules/pace-progress/pace.js',
+    'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+], 'public/js/admin/app.js').version();
+
+mix.styles([
+    'node_modules/jquery-ui-dist/jquery-ui.css',
+    'node_modules/bootstrap/dist/css/bootstrap.css',
+    'node_modules/font-awesome/css/font-awesome.css',
+], 'public/css/admin/app.css').version();
+
+mix.babel([
+    'resources/vendors/gentelella/build/js/custom.js'
+], 'public/js/admin/custom.js').version();
+
+mix.styles([
+    'resources/vendors/gentelella/build/css/custom.css',
+], 'public/css/admin/custom.css').version();
+
+mix.babel([
+    'node_modules/fastclick/lib/fastclick.js',
+    'node_modules/nprogress/nprogress.js',
+    'resources/vendors/Chart.js/dist/Chart.min.js',
+    'resources/vendors/gauge.js/dist/gauge.min.js',
+    'node_modules/bootstrap-progressbar/bootstrap-progressbar.min.js',
+    'node_modules/icheck/icheck.js',
+    'resources/vendors/skycons/skycons.js',
+    'node_modules/jquery.flot/jquery.flot.js',
+    'node_modules/jquery.flot/jquery.flot.pie.js',
+    'node_modules/jquery.flot/jquery.flot.time.js',
+    'node_modules/jquery.flot/jquery.flot.stack.js',
+    'node_modules/jquery.flot/jquery.flot.resize.js',
+    'node_modules/flot-orderbars/js/jquery.flot.orderBars.js',
+    'node_modules/flot-spline/js/jquery.flot.spline.min.js',
+    'node_modules/flot.curvedlines/curvedLines.js',
+    'resources/vendors/DateJS/build/date.js',
+    'node_modules/jqvmap/dist/jquery.vmap.js',
+    'node_modules/jqvmap/dist/maps/jquery.vmap.world.js',
+    'node_modules/jqvmap/examples/js/jquery.vmap.sampledata.js',
+    'node_modules/moment/min/moment.min.js',
+    'node_modules/bootstrap-daterangepicker/daterangepicker.js',
+], 'public/js/admin/dashboard.js').version();
+
+mix.styles([
+    'node_modules/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css',
+    'node_modules/jqvmap/dist/jqvmap.min.css',
+    'node_modules/bootstrap-daterangepicker/daterangepicker.css',
+], 'public/css/admin/dashboard.css').version();
+
+mix.babel([
     'node_modules/fastclick/lib/fastclick.js',
     'node_modules/nprogress/nprogress.js',
     'node_modules/icheck/icheck.js',
@@ -118,198 +150,18 @@ mix.babel([
     'node_modules/jszip/dist/jszip.min.js',
     'node_modules/pdfmake/build/pdfmake.min.js',
     'node_modules/pdfmake/build/vfs_fonts.js',
-    'resources/js/admin/globals.js',
-    'node_modules/gentelella/build/js/custom.js'
-], 'public/js/admin/app.js').version();
+], 'public/js/admin/table.js').version();
 
 mix.styles([
-    'node_modules/jquery-ui-dist/jquery-ui.css',
-    'node_modules/bootstrap/dist/css/bootstrap.css',
-    'node_modules/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.css',
-    'node_modules/gentelella/vendors/animate.css/animate.css',
-    'node_modules/gentelella/build/css/custom.css',
-    'node_modules/font-awesome/css/font-awesome.css',
+    'node_modules/datatables/media/css/jquery.dataTables.min.css',
     'node_modules/nprogress/nprogress.css',
     'node_modules/icheck/skins/flat/green.css',
-    'node_modules/pace-progress/themes/blue/pace-theme-minimal.css',
-    'node_modules/datatables/media/css/jquery.dataTables.min.css',
     'node_modules/datatables.net-bs/css/dataTables.bootstrap.min.css',
     'node_modules/datatables.net-buttons-bs/css/buttons.bootstrap.min.css',
     'node_modules/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css',
     'node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.min.css',
     'node_modules/datatables.net-scroller-bs/css/scroller.bootstrap.min.css',
-    'resources/css/app.css',
-], 'public/css/admin/app.css').version();
-
-
-mix.copy([
-    'node_modules/gentelella/vendors/bootstrap/dist/fonts',
-], 'public/css/fonts');
-
-mix.copy([
-    'node_modules/bootstrap/dist/css/bootstrap.css.map',
-], 'public/css/admin')
-
-mix.babel([
-    'node_modules/select2/dist/js/select2.full.js',
-    'resources/js/admin/users/edit.js',
-], 'public/js/admin/users/edit.js').version();
-
-mix.babel([
-    'node_modules/select2/dist/js/select2.full.js',
-    'resources/js/admin/categories/edit.js',
-], 'public/js/admin/categories/edit.js').version();
-
-mix.babel([
-    'node_modules/select2/dist/js/select2.full.js',
-    'resources/js/admin/tags/edit.js',
-], 'public/js/admin/tags/edit.js').version();
-
-mix.babel([
-    'node_modules/select2/dist/js/select2.full.js',
-    'resources/js/admin/nurseries/edit.js',
-], 'public/js/admin/nurseries/edit.js').version();
-
-mix.babel([
-    'node_modules/select2/dist/js/select2.full.js',
-    'resources/js/admin/nurseries/index.js',
-], 'public/js/admin/nurseries/index.js').version();
-
-mix.babel([
-    'node_modules/select2/dist/js/select2.full.js',
-    'resources/js/admin/nursery_capacities/edit.js',
-], 'public/js/admin/nursery_capacities/edit.js').version();
-
-mix.babel([
-    'node_modules/select2/dist/js/select2.full.js',
-    'resources/js/admin/writers/edit.js',
-], 'public/js/admin/writers/edit.js').version();
-
-mix.babel([
-    'node_modules/select2/dist/js/select2.full.js',
-    'resources/js/admin/permissions/operationedit.js',
-], 'public/js/admin/permissions/operationedit.js').version();
-
-mix.babel([
-    'node_modules/select2/dist/js/select2.full.js',
-    'resources/js/admin/articles/index.js',
-], 'public/js/admin/articles/index.js').version();
-
-mix.babel([
-    'node_modules/select2/dist/js/select2.full.js',
-    'resources/js/admin/features/index.js',
-], 'public/js/admin/features/index.js').version();
-
-mix.babel([
-    'node_modules/select2/dist/js/select2.full.js',
-    'resources/js/admin/article_pr_filterings/index.js'   
-], 'public/js/admin/article_pr_filterings/index.js').version();
-
-mix.babel([
-    'node_modules/select2/dist/js/select2.full.js',
-    'node_modules/jquery-lazyload/jquery.lazyload.js',
-    'node_modules/clipboard/dist/clipboard.js',
-    'resources/js/admin/common/getCdnImagePath.js',
-    'resources/js/admin/common/getImageList.js',
-    'resources/js/admin/articles/edit.js',
-], 'public/js/admin/articles/edit.js').version();
-
-mix.babel([
-    'resources/ckeditor/lang/ja.js',
-    'resources/ckeditor/lang/custom.js',
-], 'public/ckeditor/lang/ja.js');
-
-mix.copyDirectory('resources/ckeditor/plugins/citetag',
-    'public/ckeditor/plugins/citetag');
-
-mix.copyDirectory('resources/ckeditor/plugins/inserthtml',
-    'public/ckeditor/plugins/inserthtml');
-
-mix.copyDirectory('resources/ckeditor/plugins/adlink',
-    'public/ckeditor/plugins/adlink');
-
-mix.babel([
-    'node_modules/select2/dist/js/select2.full.js',
-    'resources/js/admin/pickups/index.js',
-], 'public/js/admin/pickups/index.js').version();
-
-mix.copy('resources/js/admin/common/jquery.selectlistactions.js', 'public/js/admin/common/').version();
-mix.copy('resources/js/admin/nurseries/edit_image_order.js', 'public/js/admin/nurseries/').version();
-mix.copy('resources/js/admin/articles/templates.js', 'public/js/admin/articles/').version();
-mix.copy('resources/js/admin/nursery_massupdates/common.js', 'public/js/admin/nursery_massupdates/').version();
-mix.copy('resources/js/admin/mail_subscriptions/common.js', 'public/js/admin/mail_subscriptions/').version();
-
-// mix.babel([
-//     'node_modules/select2/dist/js/select2.full.js',
-//     'resources/js/admin/common/getCdnImagePath.js',
-//     'resources/js/admin/common/getImageList.js',
-//     'resources/js/admin/pickups/edit.js',
-// ], 'public/js/admin/pickups/edit.js').version();
-
-// mix.babel([
-//     'node_modules/clipboard/dist/clipboard.js',
-//     'resources/js/admin/nurseries/edit.js',
-// ], 'public/assets/partner/js/nurseries/edit.js').version();
-
-mix.styles([
-    'node_modules/select2/dist/css/select2.css',
-    'resources/css/admin/articles/index.css',
-], 'public/css/admin/articles/index.css').version();
-
-mix.styles([
-    'node_modules/select2/dist/css/select2.css',
-], 'public/css/admin/article_pr_filterings/index.css').version();
-
-mix.styles([
-    'node_modules/select2/dist/css/select2.css',
-], 'public/css/admin/features/index.css').version();
-
-mix.styles([
-    'node_modules/select2/dist/css/select2.css',
-    'resources/css/admin/articles/edit.css'
-], 'public/css/admin/articles/edit.css').version();
-
-mix.styles([
-    'node_modules/select2/dist/css/select2.css',
-], 'public/css/admin/pickups/index.css').version();
-
-mix.styles([
-    'node_modules/select2/dist/css/select2.css',
-    'resources/css/admin/articles/edit.css',
-], 'public/css/admin/pickups/edit.css').version();
-
-mix.styles([
-    'node_modules/select2/dist/css/select2.css',
-], 'public/css/admin/users/edit.css').version();
-
-mix.styles([
-    'node_modules/select2/dist/css/select2.css',
-], 'public/css/admin/categories/edit.css').version();
-
-mix.styles([
-    'node_modules/select2/dist/css/select2.css',
-], 'public/css/admin/tags/edit.css').version();
-
-mix.styles([
-    'node_modules/select2/dist/css/select2.css',
-], 'public/css/admin/nurseries/edit.css').version();
-
-mix.styles([
-    'resources/css/admin/writers/index.css',
-], 'public/css/admin/writers/index.css').version();
-
-mix.styles([
-    'node_modules/select2/dist/css/select2.css',
-], 'public/css/admin/writers/edit.css').version();
-
-mix.styles([
-    'node_modules/select2/dist/css/select2.css',
-], 'public/css/admin/permissions/operationedit.css').version();
-
-mix.styles([
-    'node_modules/select2/dist/css/select2.css',
-    'resources/css/admin/features/edit.css'
-], 'public/css/admin/features/edit.css').version();
+], 'public/css/admin/table.css').version();
 
 /*
  |--------------------------------------------------------------------------
