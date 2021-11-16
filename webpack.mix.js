@@ -88,7 +88,7 @@ mix.babel([
 ], 'public/js/admin/app.js').version();
 
 mix.styles([
-    'node_modules/jquery-ui-dist/jquery-ui.css',
+    // 'node_modules/jquery-ui-dist/jquery-ui.css',
     'node_modules/bootstrap/dist/css/bootstrap.css',
     'node_modules/font-awesome/css/font-awesome.css',
 ], 'public/css/admin/app.css').version();
@@ -135,7 +135,7 @@ mix.babel([
     'node_modules/fastclick/lib/fastclick.js',
     'node_modules/nprogress/nprogress.js',
     'node_modules/icheck/icheck.js',
-    'node_modules/datatables/media/js/jquery.dataTables.min.js',
+    'node_modules/datatables.net/js/jquery.dataTables.min.js',
     'node_modules/datatables.net-bs/js/dataTables.bootstrap.min.js',
     'node_modules/datatables.net-buttons/js/dataTables.buttons.min.js',
     'node_modules/datatables.net-buttons-bs/js/buttons.bootstrap.min.js',
@@ -148,12 +148,12 @@ mix.babel([
     'node_modules/datatables.net-responsive-bs/js/responsive.bootstrap.js',
     'node_modules/datatables.net-scroller/js/dataTables.scroller.min.js',
     'node_modules/jszip/dist/jszip.min.js',
-    'node_modules/pdfmake/build/pdfmake.min.js',
-    'node_modules/pdfmake/build/vfs_fonts.js',
+    'resources/vendors/pdfmake/build/pdfmake.min.js',
+    'resources/vendors/pdfmake/build/vfs_fonts.js',
 ], 'public/js/admin/table.js').version();
 
 mix.styles([
-    'node_modules/datatables/media/css/jquery.dataTables.min.css',
+    'resources/vendors/datatables.net/1.10.20/css/jquery.dataTables.min.css',
     'node_modules/nprogress/nprogress.css',
     'node_modules/icheck/skins/flat/green.css',
     'node_modules/datatables.net-bs/css/dataTables.bootstrap.min.css',
