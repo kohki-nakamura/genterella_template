@@ -12,17 +12,27 @@ source ~/.bash_profile
 ```
 ※ エイリアスを設定しない場合、以降のコマンドの`sail`を`vendor/bin/sail`に変更して実行してください。
 
+## git clone 後にやること
+```
+composer install
+cp .env.example .env
+sail build
+sail artisan key:generate
+sail artisan migrate:refresh --seed
+sail up -d
+```
+
+http://localhost にアクセス
+
 ## Dockerコンテナを起動
 ```
 sail up
 ```
-http://localhost:8000/ にアクセス
 
 ## Dockerコンテナをバックグラウンドで起動
 ```
 sail up -d
 ```
-http://localhost:8000/ にアクセス
 
 ## Dockerコンテナを停止
 ```
