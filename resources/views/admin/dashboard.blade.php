@@ -1,7 +1,5 @@
 @extends('admin.layouts.app')
 
-@section('body_class','nav-md')
-
 @section('content')
     <div class="row">
         <div class="col-md-12 col-sm-12 ">

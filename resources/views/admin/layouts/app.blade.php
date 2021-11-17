@@ -23,7 +23,7 @@
         <link href="{{ asset('css/admin/custom.css') }}" rel="stylesheet">
 
     </head>
-    <body class="@yield('body_class')">
+    <body class="nav-md">
         <div class="container body">
             <div class="main_container">
                 @include('admin.layouts.sidebar')
