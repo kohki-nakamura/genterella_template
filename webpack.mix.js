@@ -84,11 +84,11 @@ mix.styles([
 
 mix.babel([
     'node_modules/jquery/dist/jquery.min.js',
-    'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+    'node_modules/bootstrap/dist/js/bootstrap.js',
 ], 'public/js/admin/app.js').version();
 
 mix.styles([
-    // 'node_modules/jquery-ui-dist/jquery-ui.css',
+    'node_modules/jquery-ui-dist/jquery-ui.css',
     'node_modules/bootstrap/dist/css/bootstrap.css',
     'node_modules/font-awesome/css/font-awesome.css',
 ], 'public/css/admin/app.css').version();
@@ -99,6 +99,7 @@ mix.babel([
 
 mix.styles([
     'resources/vendors/gentelella/build/css/custom.css',
+    'node_modules/gentelella/vendors/animate.css/animate.css',
 ], 'public/css/admin/custom.css').version();
 
 mix.babel([
